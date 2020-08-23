@@ -1,0 +1,21 @@
+{% extends 'myapp/base.html' %}
+{% block body_block %}
+
+	{% if alert %}
+		<div class="alert alert-success" role="alert">
+		  {{ alert }}
+		</div>
+	{% endif %}
+	
+	<form action="{% url 'myapp:user_login' %}" method="POST">
+		{% csrf_token %}
+		<label for='username'>Username  :  </label>
+		<input type="text" name="username" placeholder="Enter Your Username"><br><br>
+
+		<label for='password'>Password  :  </label>
+		<input type="password" name="password" placeholder="Enter Your Password"><br><br>
+
+		<input type="submit" value="Login">
+	</form>
+
+{% endblock %}

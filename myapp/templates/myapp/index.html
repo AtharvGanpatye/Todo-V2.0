@@ -1,0 +1,11 @@
+{% extends 'myapp/base.html' %}
+{% block body_block %}
+
+	<h1>To Do App</h1>
+	{% if user.is_authenticated %}
+		<h3>Welcome back, {{ user.username }}!</h3>	
+	{% else %}
+		<h3>Please Login to edit Todo List.</h3>
+	{% endif %}
+
+{% endblock %}
